@@ -22,7 +22,7 @@ pipeline {
     REPO_URL  = "https://github.com/joeladjidan/football-backend.git"
     // NOTE: créez un credential Jenkins (Username with password) contenant votre nom GitHub
     // comme username et un Personal Access Token (PAT) comme password, puis mettez son ID ci-dessous
-    GIT_CREDENTIALS_ID = 'github-token'
+    GIT_CREDENTIALS_ID = 'jenkinsToken'
   }
 
   stages {
