@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: ${SPRING_APPLICATION_NAME:football-team}
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/football_dev?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${SPRING_DATASOURCE_USERNAME:joeladjidan}
+    password: ${SPRING_DATASOURCE_PASSWORD:joeladjidan}
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: ${SERVER_PORT:8080}
+
+logging:
+  # utiliser le fichier log4j2.xml présent dans le classpath (src/main/resources)
+  config: classpath:log4j2.xml
+  file:
+    path: ${LOG_PATH:./logs}
+
+app:
+  jwt:
+    # Pour le profil dev, on peut utiliser une variable d'environnement ou une clé par défaut (non recommandée en prod)
+    secret: ${APP_JWT_SECRET:ZmFrZS1zZWNyZXQtY2hhbmdlLW1lLXBsZWFzZQ==}
+    expiration-ms: ${APP_JWT_EXPIRATION_MS:3600000}
+  flyway:
+    auto-repair: ${APP_FLYWAY_AUTO_REPAIR:true}
