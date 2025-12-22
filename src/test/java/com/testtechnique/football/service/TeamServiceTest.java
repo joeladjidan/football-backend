@@ -2,7 +2,7 @@ package com.testtechnique.football.service;
 
 import com.testtechnique.football.domain.Player;
 import com.testtechnique.football.domain.Team;
-import com.testtechnique.football.repository.TeamRepository;
+import com.testtechnique.football.repository.ITeamRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -26,7 +26,7 @@ import static org.mockito.Mockito.*;
 class TeamServiceTest {
 
     @Mock
-    TeamRepository teamRepository;
+    ITeamRepository teamRepository;
 
     @InjectMocks
     TeamServiceImpl teamService;
@@ -69,14 +69,15 @@ class TeamServiceTest {
         t2.setAcronym("T2");
         t2.setBudget(new BigDecimal("2000"));
 
-        when(teamRepository.findAll()).thenReturn(Arrays.asList(t1, t2));
+        Page<Team> page = new PageImpl<>(Arrays.asList(t1, t2), PageRequest.of(0, 10), 2);
+        when(teamRepository.findAll(any(Pageable.class))).thenReturn(page);
 
-        List<Team> res = teamRepository.findAll();
+        Page<Team> res = teamService.findAll(PageRequest.of(0, 10));
 
-        assertThat(res).hasSize(2);
-        assertEquals("Team1", res.get(0).getName());
-        assertEquals("Team2", res.get(1).getName());
-        verify(teamRepository, times(1)).findAll();
+        assertThat(res.getContent()).hasSize(2);
+        assertEquals("Team1", res.getContent().get(0).getName());
+        assertEquals("Team2", res.getContent().get(1).getName());
+        verify(teamRepository, times(1)).findAll(any(Pageable.class));
     }
 
     @Test

@@ -1,0 +1,147 @@
+# Projet Football - Backend — Guide d'installation
+
+## Table des matières
+- [Aperçu](#aperçu)
+- [Prérequis](#prérequis)
+- [Installation](#installation)
+- [Configuration (base de données)](#configuration-base-de-donn%C3%A9es)
+- [Lancer l'application](#lancer-lapplication)
+- [Informations en temps réel](#informations-en-temps-r%C3%A9el)
+- [Tests](#tests)
+- [Dépannage courant](#d%C3%A9pannage-courant)
+- [Contribution](#contribution)
+- [Licence](#licence)
+
+---
+
+## Aperçu
+Backend Java Spring Boot (Maven, Spring Data JPA, Flyway). Ce document explique comment configurer et lancer le backend localement sur Windows.
+
+Branche courante du dépôt : `develop`
+IDE recommandé : IntelliJ IDEA 2024.1
+Système : Windows 10/11
+
+## Prérequis
+- Java JDK 17+ (variable `JAVA_HOME` configurée)
+- Maven 3.6+
+- Git
+- (Optionnel) Docker
+
+Vérifier les versions :
+    java -version
+    mvn -v
+    git --version
+
+## Installation
+1. Cloner le dépôt :
+    git clone <URL_DU_REPOSITORY>
+    cd <NOM_DU_PROJET>/backend
+
+2. Compiler :
+    mvn clean package
+
+3. (Optionnel) construire sans tests :
+    mvn -DskipTests package
+
+## Configuration (base de données)
+- Conventions :
+  - Base utilisée en développement/production : MySQL
+  - Base utilisée pour les tests unitaires/intégration : H2 (mémoire)
+
+- Par défaut, l'application lit `src/main/resources/application.yml`.
+
+- Exemple MySQL (dev / prod) — paramètres de connexion :
+    spring.datasource.url=jdbc:mysql://localhost:3306/football?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    spring.datasource.driverClassName=com.mysql.cj.jdbc.Driver
+    spring.datasource.username=root
+    spring.datasource.password=root
+    # En production, ne pas utiliser "update" automatiquement ; préférer migration Flyway et ddl-auto=none
+    spring.jpa.hibernate.ddl-auto=validate
+    spring.flyway.enabled=true
+
+- Exemple H2 pour tests rapides (ou CI sans MySQL) :
+    spring.datasource.url=jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false
+    spring.datasource.driverClassName=org.h2.Driver
+    spring.datasource.username=sa
+    spring.datasource.password=
+    spring.jpa.hibernate.ddl-auto=create-drop
+    spring.flyway.enabled=false
+    # Optionnel : forcer le dialect H2 en tests
+    spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.H2Dialect
+
+- Lancer MySQL via Docker (optionnel) :
+    docker run -d \
+      --name mysql-football \
+      -e MYSQL_ROOT_PASSWORD=root \
+      -e MYSQL_DATABASE=football \
+      -e MYSQL_USER=root \
+      -e MYSQL_PASSWORD=root \
+      -p 3306:3306 \
+      mysql:8 --default-authentication-plugin=mysql_native_password
+
+  JDBC URL pour ce conteneur :
+    jdbc:mysql://localhost:3306/football?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+
+- Lancer PostgreSQL via Docker (si vous préférez PostgreSQL) :
+    docker run -d --name pg -e POSTGRES_USER=dev -e POSTGRES_PASSWORD=dev -e POSTGRES_DB=football -p 5432:5432 postgres:15
+
+## Lancer l'application
+- En dev (via Maven) :
+    mvn spring-boot:run
+
+- Avec le jar :
+    java -jar target\<artifact>.jar
+
+L'API sera disponible par défaut sur `http://localhost:8080`.
+
+## Informations en temps réel
+Cette section centralise les commandes et endpoints utiles pour obtenir l'état et les logs en temps réel.
+
+- Actuator (si activé dans `application.yml` / `application.properties`)
+  - Endpoints courants :
+    - `/actuator/health` — état de santé
+    - `/actuator/info` — informations applicatives
+    - `/actuator/metrics` — métriques exposées
+    - `/actuator/httptrace` — traces HTTP (si activé)
+  - Exemple (PowerShell) :
+      Invoke-RestMethod -Uri http://localhost:8080/actuator/health
+
+- Logs en temps réel
+  - Si l'application écrit dans un fichier `target/logs/app.log` :
+      Get-Content -Path target\logs\app.log -Wait
+  - Si lancé via Maven (console) : observer la sortie standard de `mvn spring-boot:run`
+  - Docker : suivre les logs d'un conteneur :
+      docker logs -f <container_id_or_name>
+
+- Vérifier processus et port (PowerShell)
+  - Trouver un processus Java :
+      Get-Process -Name java
+  - Vérifier si le port 8080 est occupé :
+      netstat -ano | findstr :8080
+
+- H2 Console (si activée)
+  - URL : `http://localhost:8080/h2-console`
+  - JDBC URL pour H2 in-memory : `jdbc:h2:mem:testdb`
+
+- Live reload / devtools
+  - Pour reload automatique en dev, ajouter `spring-boot-devtools` en dépendance (dev only) et lancer l'appli depuis l'IDE ou Maven.
+
+- Swagger / OpenAPI (si activé)
+  - UI : http://localhost:8080/swagger-ui.html
+  - Docs JSON : `http://localhost:8080/v3/api-docs`
+
+- Monitoring des tests & CI local
+  - Lancer les tests et suivre la sortie :
+      mvn test
+  - Pour exécuter un test précis (ex: TeamRepository) :
+      mvn -Dtest=TeamRepositoryTest test
+  - Vérifier l'état du pipeline CI via l'interface du repository (badge CI à ajouter au README si souhaité).
+
+## Tests
+- Exécuter tous les tests :
+    mvn test
+
+- MockMvc : s'assurer que les mocks renvoient des objets non nuls et préférer l'utilisation de DTOs pour la sérialisation JSON.
+
+## Licence
+Indiquer la licence du projet (par ex. MIT ou Apache-2.0) et ajouter le fichier `LICENSE` à la racine.

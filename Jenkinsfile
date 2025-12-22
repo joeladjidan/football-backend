@@ -37,33 +37,65 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          // Si l'utilisateur a fourni un outil Maven configuré dans Jenkins, on l'utilise.
+          // Try to resolve Maven tool: use provided name, otherwise probe a list of common tool names.
+          def mvnHome = null
+          def pathSep = isUnix() ? ':' : ';'
           if (params.MAVEN_TOOL?.trim()) {
             try {
-              def mvnHome = tool name: params.MAVEN_TOOL, type: 'maven'
-              env.PATH = "${mvnHome}/bin;${env.PATH}"
-              echo "Using Maven tool '${params.MAVEN_TOOL}' at ${mvnHome}"
+              mvnHome = tool name: params.MAVEN_TOOL, type: 'maven'
+              echo "Using Maven tool provided: ${params.MAVEN_TOOL} -> ${mvnHome}"
             } catch (err) {
-              echo "Maven tool '${params.MAVEN_TOOL}' not found in Jenkins configuration, falling back to system 'mvn'"
+              echo "Maven tool '${params.MAVEN_TOOL}' not found: ${err}. Will try fallback probes or use mvn from PATH"
             }
+          }
+          if (!mvnHome) {
+            def candidates = ['Maven 3.8.7','Maven 3.6.3','maven','M3']
+            for (c in candidates) {
+              try {
+                mvnHome = tool name: c, type: 'maven'
+                echo "Auto-detected Maven tool '${c}' -> ${mvnHome}"
+                break
+              } catch (ignored) {
+                // continue
+              }
+            }
+          }
+          if (mvnHome) {
+            env.PATH = "${mvnHome}/bin${pathSep}${env.PATH}"
           } else {
-            echo "No MAVEN_TOOL provided; using 'mvn' from PATH"
+            echo "No Jenkins Maven tool detected; using 'mvn' from PATH (ensure correct mvn is available on agent)"
           }
 
-          // Si l'utilisateur a fourni un JDK configuré dans Jenkins, on l'utilise.
+          // Try to resolve JDK tool similarly
+          def javaHome = null
           if (params.JDK_TOOL?.trim()) {
             try {
-              def javaHome = tool name: params.JDK_TOOL, type: 'jdk'
-              env.JAVA_HOME = javaHome
-              env.PATH = "${javaHome}/bin;${env.PATH}"
-              echo "Using JDK tool '${params.JDK_TOOL}' at ${javaHome}"
+              javaHome = tool name: params.JDK_TOOL, type: 'jdk'
+              echo "Using JDK tool provided: ${params.JDK_TOOL} -> ${javaHome}"
             } catch (err) {
-              echo "JDK tool '${params.JDK_TOOL}' not found in Jenkins configuration, falling back to system Java"
+              echo "JDK tool '${params.JDK_TOOL}' not found: ${err}. Will try fallback probes or use system java"
             }
+          }
+          if (!javaHome) {
+            def jcandidates = ['JDK 17','jdk-17','jdk17','JDK11','java']
+            for (c in jcandidates) {
+              try {
+                javaHome = tool name: c, type: 'jdk'
+                echo "Auto-detected JDK tool '${c}' -> ${javaHome}"
+                break
+              } catch (ignored) {
+                // continue
+              }
+            }
+          }
+          if (javaHome) {
+            env.JAVA_HOME = javaHome
+            env.PATH = "${javaHome}/bin${pathSep}${env.PATH}"
           } else {
-            echo "No JDK_TOOL provided; using system Java"
+            echo "No Jenkins JDK tool detected; using system java from PATH"
           }
 
+          // Build command
           def skipArg = params.SKIP_TESTS ? '-DskipTests=true' : ''
           def mavenCommand = "${env.MVN_FLAGS} ${params.MVN_GOALS} ${skipArg}"
           if (isUnix()) {

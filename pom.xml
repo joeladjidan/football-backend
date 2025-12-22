@@ -21,6 +21,7 @@
     <mysql.connector.version>8.4.0</mysql.connector.version>
   </properties>
 
+  <!-- xml -->
   <dependencies>
     <!-- Web and persistence -->
     <dependency>
@@ -71,7 +72,6 @@
       <artifactId>flyway-core</artifactId>
       <version>${flyway.version}</version>
       <exclusions>
-        <!-- Empêcher les versions transitives vulnérables de commons-lang3 apportées par d'autres modules -->
         <exclusion>
           <groupId>org.apache.commons</groupId>
           <artifactId>commons-lang3</artifactId>
@@ -83,18 +83,22 @@
       <artifactId>flyway-mysql</artifactId>
       <version>${flyway.version}</version>
     </dependency>
+
+    <!-- Correct MySQL driver (single entry) -->
     <dependency>
       <groupId>com.mysql</groupId>
       <artifactId>mysql-connector-j</artifactId>
       <version>${mysql.connector.version}</version>
       <scope>runtime</scope>
     </dependency>
-    <!-- Explicit patched commons-lang3 to avoid transitive CVE reports -->
+
+    <!-- Explicit patched commons-lang3 -->
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
       <version>3.18.0</version>
     </dependency>
+
     <!-- Logging with Log4j2 -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -123,23 +127,29 @@
       <scope>test</scope>
     </dependency>
 
-    <!-- xml -->
-    <!-- Pour Spring Boot 3 -->
+    <!-- OpenAPI -->
     <dependency>
       <groupId>org.springdoc</groupId>
       <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
       <version>2.2.0</version>
     </dependency>
-
-    <!-- Ou pour Spring Boot 2.x -->
     <dependency>
       <groupId>org.springdoc</groupId>
       <artifactId>springdoc-openapi-ui</artifactId>
       <version>1.6.15</version>
     </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>provided</scope>
+    </dependency>
 
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <scope>runtime</scope>
+    </dependency>
 
-    <!-- H2 in-memory database for tests -->
     <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>

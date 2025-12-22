@@ -1,7 +1,7 @@
 package com.testtechnique.football.service;
 
 import com.testtechnique.football.domain.User;
-import com.testtechnique.football.repository.UserAccountRepository;
+import com.testtechnique.football.repository.IUserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -24,7 +24,7 @@ import static org.mockito.Mockito.*;
 public class UserServiceTest {
 
     @Mock
-    private UserAccountRepository repo;
+    private IUserRepository repo;
 
     @Mock
     private PasswordEncoder encoder;

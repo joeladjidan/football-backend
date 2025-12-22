@@ -1,11 +1,14 @@
 package com.testtechnique.football.dto;
 
+import lombok.Data;
+
 import java.math.BigDecimal;
 import java.util.List;
 
 /**
  * DTO pour la sortie d'une équipe
  */
+@Data
 public class TeamResponse {
     public Long id;
     public String name;
