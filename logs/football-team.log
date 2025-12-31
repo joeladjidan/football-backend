@@ -1,0 +1,358 @@
+2025-12-31 00:09:31.227 [restartedMain] INFO  com.testtechnique.football.Application [football-team] - Starting Application using Java 17.0.16 with PID 30288 (D:\Travails\football-team\backend\target\classes started by joela in D:\Travails\football-team\backend)
+2025-12-31 00:09:31.247 [restartedMain] DEBUG com.testtechnique.football.Application [football-team] - Running with Spring Boot v3.3.2, Spring v6.1.11
+2025-12-31 00:09:31.247 [restartedMain] INFO  com.testtechnique.football.Application [football-team] - The following 1 profile is active: "dev"
+2025-12-31 00:09:31.307 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [football-team] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-31 00:09:31.307 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [football-team] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-31 00:09:32.973 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate [football-team] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-31 00:09:33.067 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate [football-team] - Finished Spring Data repository scanning in 82 ms. Found 3 JPA repository interfaces.
+2025-12-31 00:09:34.191 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer [football-team] - Tomcat initialized with port 8080 (http)
+2025-12-31 00:09:34.198 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol [football-team] - Initializing ProtocolHandler ["http-nio-8080"]
+2025-12-31 00:09:34.198 [restartedMain] INFO  org.apache.catalina.core.StandardService [football-team] - Starting service [Tomcat]
+2025-12-31 00:09:34.198 [restartedMain] INFO  org.apache.catalina.core.StandardEngine [football-team] - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2025-12-31 00:09:34.275 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [football-team] - Initializing Spring embedded WebApplicationContext
+2025-12-31 00:09:34.277 [restartedMain] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [football-team] - Root WebApplicationContext: initialization completed in 2963 ms
+2025-12-31 00:09:34.512 [restartedMain] INFO  com.testtechnique.football.security.JwtService [football-team] - JwtService démarré, profils actifs = [dev]
+2025-12-31 00:09:34.514 [restartedMain] DEBUG com.testtechnique.football.security.JwtService [football-team] - Logging JWT en mode VERBOSE (dev/local)
+2025-12-31 00:09:34.514 [restartedMain] DEBUG com.testtechnique.football.security.JwtService [football-team] - Secret JWT (base64) = ZmFrZS1z...
+2025-12-31 00:09:34.665 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource [football-team] - HikariPool-1 - Starting...
+2025-12-31 00:09:35.048 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool [football-team] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@75f9679e
+2025-12-31 00:09:35.050 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource [football-team] - HikariPool-1 - Start completed.
+2025-12-31 00:09:35.153 [restartedMain] INFO  org.flywaydb.core.internal.license.VersionPrinter [football-team] - Flyway Community Edition 9.22.3 by Redgate
+2025-12-31 00:09:35.153 [restartedMain] INFO  org.flywaydb.core.internal.license.VersionPrinter [football-team] - See release notes here: https://rd.gt/416ObMi
+2025-12-31 00:09:35.153 [restartedMain] INFO  org.flywaydb.core.internal.license.VersionPrinter [football-team] - 
+2025-12-31 00:09:35.230 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor [football-team] - Database: jdbc:mysql://localhost:3306/football_dev (MySQL 8.0)
+2025-12-31 00:09:35.357 [restartedMain] INFO  org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory [football-team] - Repair of failed migration in Schema History table `football_dev`.`flyway_schema_history` not necessary. No failed migration detected.
+2025-12-31 00:09:35.382 [restartedMain] INFO  org.flywaydb.core.internal.command.DbRepair [football-team] - Successfully repaired schema history table `football_dev`.`flyway_schema_history` (execution time 00:00.117s).
+2025-12-31 00:09:35.418 [restartedMain] INFO  org.flywaydb.core.internal.command.DbValidate [football-team] - Successfully validated 4 migrations (execution time 00:00.011s)
+2025-12-31 00:09:35.442 [restartedMain] INFO  org.flywaydb.core.internal.command.DbMigrate [football-team] - Current version of schema `football_dev`: 4
+2025-12-31 00:09:35.442 [restartedMain] WARN  org.flywaydb.core.internal.command.DbMigrate [football-team] - Schema `football_dev` has a version (4) that is newer than the latest available migration (3) !
+2025-12-31 00:09:35.442 [restartedMain] INFO  org.flywaydb.core.internal.command.DbMigrate [football-team] - Schema `football_dev` is up to date. No migration necessary.
+2025-12-31 00:09:35.568 [restartedMain] INFO  org.hibernate.jpa.internal.util.LogHelper [football-team] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-31 00:09:35.679 [restartedMain] INFO  org.hibernate.Version [football-team] - HHH000412: Hibernate ORM core version 6.5.2.Final
+2025-12-31 00:09:35.739 [restartedMain] INFO  org.hibernate.cache.internal.RegionFactoryInitiator [football-team] - HHH000026: Second-level cache disabled
+2025-12-31 00:09:36.180 [restartedMain] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo [football-team] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-31 00:09:37.222 [restartedMain] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [football-team] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-31 00:09:37.302 [restartedMain] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [football-team] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-31 00:09:37.764 [restartedMain] DEBUG com.testtechnique.football.security.JwtAuthFilter [football-team] - Filter 'jwtAuthFilter' configured for use
+2025-12-31 00:09:38.017 [restartedMain] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer [football-team] - Global AuthenticationManager configured with UserDetailsService bean with name jpaUserDetailsService
+2025-12-31 00:09:38.210 [restartedMain] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [football-team] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-31 00:09:39.432 [restartedMain] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [football-team] - Exposing 4 endpoints beneath base path '/actuator'
+2025-12-31 00:09:40.411 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [football-team] - LiveReload server is running on port 35729
+2025-12-31 00:09:40.489 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol [football-team] - Starting ProtocolHandler ["http-nio-8080"]
+2025-12-31 00:09:40.547 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer [football-team] - Tomcat started on port 8080 (http) with context path '/'
+2025-12-31 00:09:40.586 [restartedMain] INFO  com.testtechnique.football.Application [football-team] - Started Application in 9.878 seconds (process running for 11.277)
+2025-12-31 00:12:23.364 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [football-team] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-31 00:12:23.366 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet [football-team] - Initializing Servlet 'dispatcherServlet'
+2025-12-31 00:12:23.379 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet [football-team] - Completed initialization in 9 ms
+2025-12-31 00:12:23.680 [http-nio-8080-exec-1] INFO  com.testtechnique.football.auth.AuthController [football-team] - Tentative de connexion d'un utilisateur
+2025-12-31 00:12:24.397 [http-nio-8080-exec-1] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 00:12:24.516 [http-nio-8080-exec-1] DEBUG com.testtechnique.football.security.JwtService [football-team] - Token généré pour utilisateur=admin expiresAt=2025-12-31T01:12:24.364+0100 token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2NzEzNjM0NCwiZXhwIjoxNzY3MTM5OTQ0LCJyb2xlcyI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl19.y_PIDTVWt4dawwOVQ3X_-s78X1dkGRNLFw2M_fj6N3I
+2025-12-31 00:12:24.518 [http-nio-8080-exec-1] INFO  com.testtechnique.football.auth.AuthController [football-team] - Authentification réussie pour un utilisateur
+2025-12-31 00:14:10.179 [http-nio-8080-exec-2] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 00:14:10.227 [http-nio-8080-exec-2] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767136344, exp=1767139944, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 00:14:10.487 [http-nio-8080-exec-2] WARN  org.springframework.data.web.config.SpringDataJacksonConfiguration$PageModule$PlainPageSerializationWarning [football-team] - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2025-12-31 00:14:13.529 [http-nio-8080-exec-3] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 00:14:13.532 [http-nio-8080-exec-3] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767136344, exp=1767139944, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 00:14:17.766 [http-nio-8080-exec-4] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 00:14:17.771 [http-nio-8080-exec-4] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767136344, exp=1767139944, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 00:14:19.376 [http-nio-8080-exec-7] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 00:14:19.382 [http-nio-8080-exec-7] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767136344, exp=1767139944, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 00:14:29.824 [http-nio-8080-exec-6] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 00:14:29.840 [http-nio-8080-exec-6] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767136344, exp=1767139944, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 00:14:36.726 [http-nio-8080-exec-5] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 00:14:36.731 [http-nio-8080-exec-5] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767136344, exp=1767139944, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 00:17:49.862 [http-nio-8080-exec-8] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 00:17:49.954 [http-nio-8080-exec-8] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767136344, exp=1767139944, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 00:18:02.503 [http-nio-8080-exec-9] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 00:18:02.536 [http-nio-8080-exec-9] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767136344, exp=1767139944, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 00:18:03.214 [http-nio-8080-exec-10] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 00:18:03.226 [http-nio-8080-exec-10] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767136344, exp=1767139944, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 00:18:08.543 [http-nio-8080-exec-1] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 00:18:08.553 [http-nio-8080-exec-1] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767136344, exp=1767139944, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 00:20:05.086 [http-nio-8080-exec-2] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 00:20:05.134 [http-nio-8080-exec-2] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767136344, exp=1767139944, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 00:20:22.276 [http-nio-8080-exec-3] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 00:20:22.285 [http-nio-8080-exec-3] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767136344, exp=1767139944, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 00:20:24.950 [http-nio-8080-exec-4] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 00:20:24.957 [http-nio-8080-exec-4] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767136344, exp=1767139944, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 00:20:29.772 [http-nio-8080-exec-7] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 00:20:29.776 [http-nio-8080-exec-7] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767136344, exp=1767139944, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 00:20:30.181 [http-nio-8080-exec-6] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 00:20:30.191 [http-nio-8080-exec-6] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767136344, exp=1767139944, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 00:20:35.944 [http-nio-8080-exec-5] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 00:20:35.957 [http-nio-8080-exec-5] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767136344, exp=1767139944, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 00:20:36.002 [http-nio-8080-exec-5] INFO  com.testtechnique.football.auth.AuthController [football-team] - Tentative de connexion d'un utilisateur
+2025-12-31 00:20:36.207 [http-nio-8080-exec-5] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 00:20:36.219 [http-nio-8080-exec-5] DEBUG com.testtechnique.football.security.JwtService [football-team] - Token généré pour utilisateur=admin expiresAt=2025-12-31T01:20:36.207+0100 token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2NzEzNjgzNiwiZXhwIjoxNzY3MTQwNDM2LCJyb2xlcyI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl19.BAhMV5oxC2WXhOOtdmINGIunA05Gm02bnCAiNILJDKE
+2025-12-31 00:20:36.219 [http-nio-8080-exec-5] INFO  com.testtechnique.football.auth.AuthController [football-team] - Authentification réussie pour un utilisateur
+2025-12-31 00:36:04.468 [restartedMain] INFO  com.testtechnique.football.Application [football-team] - Starting Application using Java 17.0.16 with PID 19720 (D:\Travails\football-team\backend\target\classes started by joela in D:\Travails\football-team\backend)
+2025-12-31 00:36:04.482 [restartedMain] DEBUG com.testtechnique.football.Application [football-team] - Running with Spring Boot v3.3.2, Spring v6.1.11
+2025-12-31 00:36:04.485 [restartedMain] INFO  com.testtechnique.football.Application [football-team] - The following 1 profile is active: "dev"
+2025-12-31 00:36:04.565 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [football-team] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-31 00:36:04.565 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [football-team] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-31 00:36:06.910 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate [football-team] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-31 00:36:07.094 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate [football-team] - Finished Spring Data repository scanning in 166 ms. Found 3 JPA repository interfaces.
+2025-12-31 00:36:08.780 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer [football-team] - Tomcat initialized with port 8080 (http)
+2025-12-31 00:36:08.808 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol [football-team] - Initializing ProtocolHandler ["http-nio-8080"]
+2025-12-31 00:36:08.818 [restartedMain] INFO  org.apache.catalina.core.StandardService [football-team] - Starting service [Tomcat]
+2025-12-31 00:36:08.822 [restartedMain] INFO  org.apache.catalina.core.StandardEngine [football-team] - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2025-12-31 00:36:08.902 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [football-team] - Initializing Spring embedded WebApplicationContext
+2025-12-31 00:36:08.904 [restartedMain] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [football-team] - Root WebApplicationContext: initialization completed in 4334 ms
+2025-12-31 00:36:09.244 [restartedMain] INFO  com.testtechnique.football.security.JwtService [football-team] - JwtService démarré, profils actifs = [dev]
+2025-12-31 00:36:09.244 [restartedMain] DEBUG com.testtechnique.football.security.JwtService [football-team] - Logging JWT en mode VERBOSE (dev/local)
+2025-12-31 00:36:09.261 [restartedMain] DEBUG com.testtechnique.football.security.JwtService [football-team] - Secret JWT (base64) = ZmFrZS1z...
+2025-12-31 00:36:09.431 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource [football-team] - HikariPool-1 - Starting...
+2025-12-31 00:36:09.818 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool [football-team] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2ac1e89
+2025-12-31 00:36:09.825 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource [football-team] - HikariPool-1 - Start completed.
+2025-12-31 00:36:10.032 [restartedMain] INFO  org.flywaydb.core.internal.license.VersionPrinter [football-team] - Flyway Community Edition 9.22.3 by Redgate
+2025-12-31 00:36:10.034 [restartedMain] INFO  org.flywaydb.core.internal.license.VersionPrinter [football-team] - See release notes here: https://rd.gt/416ObMi
+2025-12-31 00:36:10.034 [restartedMain] INFO  org.flywaydb.core.internal.license.VersionPrinter [football-team] - 
+2025-12-31 00:36:10.105 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor [football-team] - Database: jdbc:mysql://localhost:3306/football_dev (MySQL 8.0)
+2025-12-31 00:36:10.220 [restartedMain] INFO  org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory [football-team] - Repair of failed migration in Schema History table `football_dev`.`flyway_schema_history` not necessary. No failed migration detected.
+2025-12-31 00:36:10.252 [restartedMain] INFO  org.flywaydb.core.internal.command.DbRepair [football-team] - Successfully repaired schema history table `football_dev`.`flyway_schema_history` (execution time 00:00.106s).
+2025-12-31 00:36:10.303 [restartedMain] INFO  org.flywaydb.core.internal.command.DbValidate [football-team] - Successfully validated 4 migrations (execution time 00:00.015s)
+2025-12-31 00:36:10.332 [restartedMain] INFO  org.flywaydb.core.internal.command.DbMigrate [football-team] - Current version of schema `football_dev`: 4
+2025-12-31 00:36:10.332 [restartedMain] WARN  org.flywaydb.core.internal.command.DbMigrate [football-team] - Schema `football_dev` has a version (4) that is newer than the latest available migration (3) !
+2025-12-31 00:36:10.340 [restartedMain] INFO  org.flywaydb.core.internal.command.DbMigrate [football-team] - Schema `football_dev` is up to date. No migration necessary.
+2025-12-31 00:36:10.540 [restartedMain] INFO  org.hibernate.jpa.internal.util.LogHelper [football-team] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-31 00:36:10.668 [restartedMain] INFO  org.hibernate.Version [football-team] - HHH000412: Hibernate ORM core version 6.5.2.Final
+2025-12-31 00:36:10.726 [restartedMain] INFO  org.hibernate.cache.internal.RegionFactoryInitiator [football-team] - HHH000026: Second-level cache disabled
+2025-12-31 00:36:11.306 [restartedMain] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo [football-team] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-31 00:36:13.100 [restartedMain] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [football-team] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-31 00:36:13.679 [restartedMain] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [football-team] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-31 00:36:14.578 [restartedMain] DEBUG com.testtechnique.football.security.JwtAuthFilter [football-team] - Filter 'jwtAuthFilter' configured for use
+2025-12-31 00:36:15.048 [restartedMain] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer [football-team] - Global AuthenticationManager configured with UserDetailsService bean with name jpaUserDetailsService
+2025-12-31 00:36:15.360 [restartedMain] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [football-team] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-31 00:36:17.335 [restartedMain] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [football-team] - Exposing 4 endpoints beneath base path '/actuator'
+2025-12-31 00:36:19.115 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [football-team] - LiveReload server is running on port 35729
+2025-12-31 00:36:19.220 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol [football-team] - Starting ProtocolHandler ["http-nio-8080"]
+2025-12-31 00:36:19.277 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer [football-team] - Tomcat started on port 8080 (http) with context path '/'
+2025-12-31 00:36:19.312 [restartedMain] INFO  com.testtechnique.football.Application [football-team] - Started Application in 15.643 seconds (process running for 17.754)
+2025-12-31 00:47:04.730 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [football-team] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-31 00:47:04.759 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet [football-team] - Initializing Servlet 'dispatcherServlet'
+2025-12-31 00:47:04.936 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet [football-team] - Completed initialization in 177 ms
+2025-12-31 00:47:05.922 [http-nio-8080-exec-1] INFO  com.testtechnique.football.auth.AuthController [football-team] - Tentative de connexion d'un utilisateur
+2025-12-31 00:47:07.101 [http-nio-8080-exec-1] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 00:47:07.260 [http-nio-8080-exec-1] DEBUG com.testtechnique.football.security.JwtService [football-team] - Token généré pour utilisateur=admin expiresAt=2025-12-31T01:47:07.053+0100 token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2NzEzODQyNywiZXhwIjoxNzY3MTQyMDI3LCJyb2xlcyI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl19.xs5HORruORt4SGfre1wo3FlivLZP00R7fygqbjvP8Do
+2025-12-31 00:47:07.260 [http-nio-8080-exec-1] INFO  com.testtechnique.football.auth.AuthController [football-team] - Authentification réussie pour un utilisateur
+2025-12-31 01:09:30.085 [restartedMain] INFO  com.testtechnique.football.Application [football-team] - Starting Application using Java 17.0.16 with PID 27896 (D:\Travails\football-team\backend\target\classes started by joela in D:\Travails\football-team\backend)
+2025-12-31 01:09:30.095 [restartedMain] DEBUG com.testtechnique.football.Application [football-team] - Running with Spring Boot v3.3.2, Spring v6.1.11
+2025-12-31 01:09:30.095 [restartedMain] INFO  com.testtechnique.football.Application [football-team] - The following 1 profile is active: "dev"
+2025-12-31 01:09:30.161 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [football-team] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-31 01:09:30.161 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [football-team] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-31 01:09:32.083 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate [football-team] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-31 01:09:32.227 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate [football-team] - Finished Spring Data repository scanning in 117 ms. Found 3 JPA repository interfaces.
+2025-12-31 01:09:33.890 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer [football-team] - Tomcat initialized with port 8080 (http)
+2025-12-31 01:09:33.912 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol [football-team] - Initializing ProtocolHandler ["http-nio-8080"]
+2025-12-31 01:09:33.918 [restartedMain] INFO  org.apache.catalina.core.StandardService [football-team] - Starting service [Tomcat]
+2025-12-31 01:09:33.919 [restartedMain] INFO  org.apache.catalina.core.StandardEngine [football-team] - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2025-12-31 01:09:34.017 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [football-team] - Initializing Spring embedded WebApplicationContext
+2025-12-31 01:09:34.017 [restartedMain] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [football-team] - Root WebApplicationContext: initialization completed in 3856 ms
+2025-12-31 01:09:34.362 [restartedMain] INFO  com.testtechnique.football.security.JwtService [football-team] - JwtService démarré, profils actifs = [dev]
+2025-12-31 01:09:34.362 [restartedMain] DEBUG com.testtechnique.football.security.JwtService [football-team] - Logging JWT en mode VERBOSE (dev/local)
+2025-12-31 01:09:34.362 [restartedMain] DEBUG com.testtechnique.football.security.JwtService [football-team] - Secret JWT (base64) = ZmFrZS1z...
+2025-12-31 01:09:34.536 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource [football-team] - HikariPool-1 - Starting...
+2025-12-31 01:09:34.830 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool [football-team] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@bc9918b
+2025-12-31 01:09:34.830 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource [football-team] - HikariPool-1 - Start completed.
+2025-12-31 01:09:35.038 [restartedMain] INFO  org.flywaydb.core.internal.license.VersionPrinter [football-team] - Flyway Community Edition 9.22.3 by Redgate
+2025-12-31 01:09:35.038 [restartedMain] INFO  org.flywaydb.core.internal.license.VersionPrinter [football-team] - See release notes here: https://rd.gt/416ObMi
+2025-12-31 01:09:35.038 [restartedMain] INFO  org.flywaydb.core.internal.license.VersionPrinter [football-team] - 
+2025-12-31 01:09:35.115 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor [football-team] - Database: jdbc:mysql://localhost:3306/football_dev (MySQL 8.0)
+2025-12-31 01:09:35.251 [restartedMain] INFO  org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory [football-team] - Repair of failed migration in Schema History table `football_dev`.`flyway_schema_history` not necessary. No failed migration detected.
+2025-12-31 01:09:35.281 [restartedMain] INFO  org.flywaydb.core.internal.command.DbRepair [football-team] - Successfully repaired schema history table `football_dev`.`flyway_schema_history` (execution time 00:00.126s).
+2025-12-31 01:09:35.328 [restartedMain] INFO  org.flywaydb.core.internal.command.DbValidate [football-team] - Successfully validated 4 migrations (execution time 00:00.019s)
+2025-12-31 01:09:35.344 [restartedMain] INFO  org.flywaydb.core.internal.command.DbMigrate [football-team] - Current version of schema `football_dev`: 4
+2025-12-31 01:09:35.344 [restartedMain] WARN  org.flywaydb.core.internal.command.DbMigrate [football-team] - Schema `football_dev` has a version (4) that is newer than the latest available migration (3) !
+2025-12-31 01:09:35.361 [restartedMain] INFO  org.flywaydb.core.internal.command.DbMigrate [football-team] - Schema `football_dev` is up to date. No migration necessary.
+2025-12-31 01:09:35.548 [restartedMain] INFO  org.hibernate.jpa.internal.util.LogHelper [football-team] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-31 01:09:35.649 [restartedMain] INFO  org.hibernate.Version [football-team] - HHH000412: Hibernate ORM core version 6.5.2.Final
+2025-12-31 01:09:35.740 [restartedMain] INFO  org.hibernate.cache.internal.RegionFactoryInitiator [football-team] - HHH000026: Second-level cache disabled
+2025-12-31 01:09:36.241 [restartedMain] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo [football-team] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-31 01:09:37.949 [restartedMain] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [football-team] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-31 01:09:38.067 [restartedMain] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [football-team] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-31 01:09:38.762 [restartedMain] DEBUG com.testtechnique.football.security.JwtAuthFilter [football-team] - Filter 'jwtAuthFilter' configured for use
+2025-12-31 01:09:39.160 [restartedMain] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer [football-team] - Global AuthenticationManager configured with UserDetailsService bean with name jpaUserDetailsService
+2025-12-31 01:09:39.467 [restartedMain] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [football-team] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-31 01:09:41.472 [restartedMain] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [football-team] - Exposing 4 endpoints beneath base path '/actuator'
+2025-12-31 01:09:43.026 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [football-team] - LiveReload server is running on port 35729
+2025-12-31 01:09:43.168 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol [football-team] - Starting ProtocolHandler ["http-nio-8080"]
+2025-12-31 01:09:43.233 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer [football-team] - Tomcat started on port 8080 (http) with context path '/'
+2025-12-31 01:09:43.279 [restartedMain] INFO  com.testtechnique.football.Application [football-team] - Started Application in 13.79 seconds (process running for 15.516)
+2025-12-31 01:10:32.545 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [football-team] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-31 01:10:32.547 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet [football-team] - Initializing Servlet 'dispatcherServlet'
+2025-12-31 01:10:32.550 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet [football-team] - Completed initialization in 3 ms
+2025-12-31 01:10:32.910 [http-nio-8080-exec-1] INFO  com.testtechnique.football.auth.AuthController [football-team] - Tentative de connexion d'un utilisateur
+2025-12-31 01:10:33.681 [http-nio-8080-exec-1] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 01:10:33.744 [http-nio-8080-exec-1] DEBUG com.testtechnique.football.security.JwtService [football-team] - Token généré pour utilisateur=admin expiresAt=2025-12-31T02:10:33.670+0100 token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2NzEzOTgzMywiZXhwIjoxNzY3MTQzNDMzLCJyb2xlcyI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl19.u6dTKspZKqcVinxRNfbd5wxZ8GA4D__9zV845GGH-D0
+2025-12-31 01:10:33.744 [http-nio-8080-exec-1] INFO  com.testtechnique.football.auth.AuthController [football-team] - Authentification réussie pour un utilisateur
+2025-12-31 01:14:05.379 [http-nio-8080-exec-2] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 01:14:05.577 [http-nio-8080-exec-2] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767139833, exp=1767143433, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 01:14:06.765 [http-nio-8080-exec-2] WARN  org.springframework.data.web.config.SpringDataJacksonConfiguration$PageModule$PlainPageSerializationWarning [football-team] - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2025-12-31 01:14:11.916 [http-nio-8080-exec-8] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 01:14:11.926 [http-nio-8080-exec-8] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767139833, exp=1767143433, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 01:14:12.025 [http-nio-8080-exec-10] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 01:14:12.030 [http-nio-8080-exec-10] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767139833, exp=1767143433, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 01:14:18.232 [http-nio-8080-exec-5] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 01:14:18.240 [http-nio-8080-exec-5] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767139833, exp=1767143433, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 01:14:23.168 [http-nio-8080-exec-6] INFO  com.testtechnique.football.auth.AuthController [football-team] - Tentative de connexion d'un utilisateur
+2025-12-31 01:14:23.410 [http-nio-8080-exec-6] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 01:14:23.416 [http-nio-8080-exec-6] DEBUG com.testtechnique.football.security.JwtService [football-team] - Token généré pour utilisateur=admin expiresAt=2025-12-31T02:14:23.410+0100 token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2NzE0MDA2MywiZXhwIjoxNzY3MTQzNjYzLCJyb2xlcyI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl19.v9LZCPEzGM6WeAl1kGXErzPMKkrEg-IlXgTy2rS9-bw
+2025-12-31 01:14:23.418 [http-nio-8080-exec-6] INFO  com.testtechnique.football.auth.AuthController [football-team] - Authentification réussie pour un utilisateur
+2025-12-31 01:18:12.112 [http-nio-8080-exec-7] INFO  com.testtechnique.football.auth.AuthController [football-team] - Tentative de connexion d'un utilisateur
+2025-12-31 01:18:12.417 [http-nio-8080-exec-7] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 01:18:12.427 [http-nio-8080-exec-7] DEBUG com.testtechnique.football.security.JwtService [football-team] - Token généré pour utilisateur=admin expiresAt=2025-12-31T02:18:12.413+0100 token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2NzE0MDI5MiwiZXhwIjoxNzY3MTQzODkyLCJyb2xlcyI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl19.PvdQhYfn8-4qXidvLo6929Ebbrf-Y0R2zd6mFRtDpps
+2025-12-31 01:18:12.427 [http-nio-8080-exec-7] INFO  com.testtechnique.football.auth.AuthController [football-team] - Authentification réussie pour un utilisateur
+2025-12-31 01:18:16.672 [http-nio-8080-exec-3] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 01:18:16.683 [http-nio-8080-exec-3] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767140292, exp=1767143892, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 01:18:18.500 [http-nio-8080-exec-9] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 01:18:18.501 [http-nio-8080-exec-9] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767140292, exp=1767143892, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 01:18:20.333 [http-nio-8080-exec-4] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 01:18:20.339 [http-nio-8080-exec-4] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767140292, exp=1767143892, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 01:18:24.214 [http-nio-8080-exec-1] INFO  com.testtechnique.football.auth.AuthController [football-team] - Tentative de connexion d'un utilisateur
+2025-12-31 01:18:24.346 [http-nio-8080-exec-1] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 01:18:24.346 [http-nio-8080-exec-1] DEBUG com.testtechnique.football.security.JwtService [football-team] - Token généré pour utilisateur=admin expiresAt=2025-12-31T02:18:24.346+0100 token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2NzE0MDMwNCwiZXhwIjoxNzY3MTQzOTA0LCJyb2xlcyI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl19.goWrskJPL0gVJWdmn2VuVr1D6CBFCsrQRYoU6azrNJk
+2025-12-31 01:18:24.346 [http-nio-8080-exec-1] INFO  com.testtechnique.football.auth.AuthController [football-team] - Authentification réussie pour un utilisateur
+2025-12-31 01:19:34.753 [http-nio-8080-exec-2] INFO  com.testtechnique.football.auth.AuthController [football-team] - Tentative de connexion d'un utilisateur
+2025-12-31 01:19:34.954 [http-nio-8080-exec-2] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 01:19:34.957 [http-nio-8080-exec-2] DEBUG com.testtechnique.football.security.JwtService [football-team] - Token généré pour utilisateur=admin expiresAt=2025-12-31T02:19:34.954+0100 token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2NzE0MDM3NCwiZXhwIjoxNzY3MTQzOTc0LCJyb2xlcyI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl19.lb3LSIhR3LclPOw5nku5V5tI-RhdwGUCvZs0fEgIZqc
+2025-12-31 01:19:34.957 [http-nio-8080-exec-2] INFO  com.testtechnique.football.auth.AuthController [football-team] - Authentification réussie pour un utilisateur
+2025-12-31 01:29:04.583 [http-nio-8080-exec-8] INFO  com.testtechnique.football.auth.AuthController [football-team] - Tentative de connexion d'un utilisateur
+2025-12-31 01:29:06.567 [http-nio-8080-exec-8] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 01:29:07.117 [http-nio-8080-exec-8] DEBUG com.testtechnique.football.security.JwtService [football-team] - Token généré pour utilisateur=admin expiresAt=2025-12-31T02:29:06.476+0100 token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2NzE0MDk0NiwiZXhwIjoxNzY3MTQ0NTQ2LCJyb2xlcyI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl19.ye6OhDwKaYNh1s77ujQGpmF04VkyUuq_WSmKCiHP21A
+2025-12-31 01:29:07.330 [http-nio-8080-exec-8] INFO  com.testtechnique.football.auth.AuthController [football-team] - Authentification réussie pour un utilisateur
+2025-12-31 01:32:29.553 [http-nio-8080-exec-10] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 01:32:29.721 [http-nio-8080-exec-10] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767140946, exp=1767144546, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 01:32:36.999 [http-nio-8080-exec-5] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 01:32:37.010 [http-nio-8080-exec-5] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767140946, exp=1767144546, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 01:36:29.598 [http-nio-8080-exec-6] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 01:36:29.893 [http-nio-8080-exec-6] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767140946, exp=1767144546, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 01:37:02.509 [http-nio-8080-exec-7] INFO  com.testtechnique.football.auth.AuthController [football-team] - Tentative de connexion d'un utilisateur
+2025-12-31 01:37:02.760 [http-nio-8080-exec-7] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 01:37:02.766 [http-nio-8080-exec-7] DEBUG com.testtechnique.football.security.JwtService [football-team] - Token généré pour utilisateur=admin expiresAt=2025-12-31T02:37:02.758+0100 token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2NzE0MTQyMiwiZXhwIjoxNzY3MTQ1MDIyLCJyb2xlcyI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl19.q0ndIVlR38BLxH5IHW5yxkmNECsy_z-sKI2Rx_VvhJA
+2025-12-31 01:37:02.780 [http-nio-8080-exec-7] INFO  com.testtechnique.football.auth.AuthController [football-team] - Authentification réussie pour un utilisateur
+2025-12-31 01:43:28.578 [restartedMain] INFO  com.testtechnique.football.Application [football-team] - Starting Application using Java 17.0.16 with PID 19084 (D:\Travails\football-team\backend\target\classes started by joela in D:\Travails\football-team\backend)
+2025-12-31 01:43:28.598 [restartedMain] DEBUG com.testtechnique.football.Application [football-team] - Running with Spring Boot v3.3.2, Spring v6.1.11
+2025-12-31 01:43:28.598 [restartedMain] INFO  com.testtechnique.football.Application [football-team] - The following 1 profile is active: "dev"
+2025-12-31 01:43:28.731 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [football-team] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-31 01:43:28.731 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [football-team] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-31 01:43:33.408 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate [football-team] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-31 01:43:33.620 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate [football-team] - Finished Spring Data repository scanning in 186 ms. Found 3 JPA repository interfaces.
+2025-12-31 01:43:36.482 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer [football-team] - Tomcat initialized with port 8080 (http)
+2025-12-31 01:43:36.532 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol [football-team] - Initializing ProtocolHandler ["http-nio-8080"]
+2025-12-31 01:43:36.540 [restartedMain] INFO  org.apache.catalina.core.StandardService [football-team] - Starting service [Tomcat]
+2025-12-31 01:43:36.542 [restartedMain] INFO  org.apache.catalina.core.StandardEngine [football-team] - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2025-12-31 01:43:36.730 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [football-team] - Initializing Spring embedded WebApplicationContext
+2025-12-31 01:43:36.744 [restartedMain] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [football-team] - Root WebApplicationContext: initialization completed in 8004 ms
+2025-12-31 01:43:37.499 [restartedMain] INFO  com.testtechnique.football.security.JwtService [football-team] - JwtService démarré, profils actifs = [dev]
+2025-12-31 01:43:37.501 [restartedMain] DEBUG com.testtechnique.football.security.JwtService [football-team] - Logging JWT en mode VERBOSE (dev/local)
+2025-12-31 01:43:37.501 [restartedMain] DEBUG com.testtechnique.football.security.JwtService [football-team] - Secret JWT (base64) = ZmFrZS1z...
+2025-12-31 01:43:37.945 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource [football-team] - HikariPool-1 - Starting...
+2025-12-31 01:43:38.609 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool [football-team] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@79f334dd
+2025-12-31 01:43:38.614 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource [football-team] - HikariPool-1 - Start completed.
+2025-12-31 01:43:38.936 [restartedMain] INFO  org.flywaydb.core.internal.license.VersionPrinter [football-team] - Flyway Community Edition 9.22.3 by Redgate
+2025-12-31 01:43:38.936 [restartedMain] INFO  org.flywaydb.core.internal.license.VersionPrinter [football-team] - See release notes here: https://rd.gt/416ObMi
+2025-12-31 01:43:38.936 [restartedMain] INFO  org.flywaydb.core.internal.license.VersionPrinter [football-team] - 
+2025-12-31 01:43:39.033 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor [football-team] - Database: jdbc:mysql://localhost:3306/football_dev (MySQL 8.0)
+2025-12-31 01:43:39.186 [restartedMain] INFO  org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory [football-team] - Repair of failed migration in Schema History table `football_dev`.`flyway_schema_history` not necessary. No failed migration detected.
+2025-12-31 01:43:39.238 [restartedMain] INFO  org.flywaydb.core.internal.command.DbRepair [football-team] - Successfully repaired schema history table `football_dev`.`flyway_schema_history` (execution time 00:00.148s).
+2025-12-31 01:43:39.305 [restartedMain] INFO  org.flywaydb.core.internal.command.DbValidate [football-team] - Successfully validated 4 migrations (execution time 00:00.020s)
+2025-12-31 01:43:39.343 [restartedMain] INFO  org.flywaydb.core.internal.command.DbMigrate [football-team] - Current version of schema `football_dev`: 4
+2025-12-31 01:43:39.345 [restartedMain] WARN  org.flywaydb.core.internal.command.DbMigrate [football-team] - Schema `football_dev` has a version (4) that is newer than the latest available migration (3) !
+2025-12-31 01:43:39.356 [restartedMain] INFO  org.flywaydb.core.internal.command.DbMigrate [football-team] - Schema `football_dev` is up to date. No migration necessary.
+2025-12-31 01:43:39.686 [restartedMain] INFO  org.hibernate.jpa.internal.util.LogHelper [football-team] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-31 01:43:39.892 [restartedMain] INFO  org.hibernate.Version [football-team] - HHH000412: Hibernate ORM core version 6.5.2.Final
+2025-12-31 01:43:40.016 [restartedMain] INFO  org.hibernate.cache.internal.RegionFactoryInitiator [football-team] - HHH000026: Second-level cache disabled
+2025-12-31 01:43:41.023 [restartedMain] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo [football-team] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-31 01:43:44.327 [restartedMain] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [football-team] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-31 01:43:44.494 [restartedMain] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [football-team] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-31 01:43:45.920 [restartedMain] DEBUG com.testtechnique.football.security.JwtAuthFilter [football-team] - Filter 'jwtAuthFilter' configured for use
+2025-12-31 01:43:46.454 [restartedMain] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer [football-team] - Global AuthenticationManager configured with UserDetailsService bean with name jpaUserDetailsService
+2025-12-31 01:43:46.878 [restartedMain] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [football-team] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-31 01:43:49.643 [restartedMain] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [football-team] - Exposing 4 endpoints beneath base path '/actuator'
+2025-12-31 01:43:51.708 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [football-team] - LiveReload server is running on port 35729
+2025-12-31 01:43:51.875 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol [football-team] - Starting ProtocolHandler ["http-nio-8080"]
+2025-12-31 01:43:51.946 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer [football-team] - Tomcat started on port 8080 (http) with context path '/'
+2025-12-31 01:43:51.988 [restartedMain] INFO  com.testtechnique.football.Application [football-team] - Started Application in 24.328 seconds (process running for 26.882)
+2025-12-31 01:44:43.096 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [football-team] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-31 01:44:43.101 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet [football-team] - Initializing Servlet 'dispatcherServlet'
+2025-12-31 01:44:43.110 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet [football-team] - Completed initialization in 9 ms
+2025-12-31 01:44:43.266 [http-nio-8080-exec-1] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 01:44:43.415 [http-nio-8080-exec-1] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767141422, exp=1767145022, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 01:44:44.519 [http-nio-8080-exec-1] WARN  org.springframework.data.web.config.SpringDataJacksonConfiguration$PageModule$PlainPageSerializationWarning [football-team] - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2025-12-31 01:44:46.741 [http-nio-8080-exec-2] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 01:44:46.749 [http-nio-8080-exec-2] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767141422, exp=1767145022, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 01:44:50.878 [http-nio-8080-exec-3] INFO  com.testtechnique.football.auth.AuthController [football-team] - Tentative de connexion d'un utilisateur
+2025-12-31 01:44:51.205 [http-nio-8080-exec-3] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 01:44:51.240 [http-nio-8080-exec-3] DEBUG com.testtechnique.football.security.JwtService [football-team] - Token généré pour utilisateur=admin expiresAt=2025-12-31T02:44:51.205+0100 token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2NzE0MTg5MSwiZXhwIjoxNzY3MTQ1NDkxLCJyb2xlcyI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl19.fyB_R5qOUfBPf6zl7ze0xwgko5GGLvjR8CKe2ewFKlw
+2025-12-31 01:44:51.250 [http-nio-8080-exec-3] INFO  com.testtechnique.football.auth.AuthController [football-team] - Authentification réussie pour un utilisateur
+2025-12-31 01:51:35.867 [restartedMain] INFO  com.testtechnique.football.Application [football-team] - Starting Application using Java 17.0.16 with PID 11620 (D:\Travails\football-team\backend\target\classes started by joela in D:\Travails\football-team\backend)
+2025-12-31 01:51:35.897 [restartedMain] DEBUG com.testtechnique.football.Application [football-team] - Running with Spring Boot v3.3.2, Spring v6.1.11
+2025-12-31 01:51:35.900 [restartedMain] INFO  com.testtechnique.football.Application [football-team] - The following 1 profile is active: "dev"
+2025-12-31 01:51:36.068 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [football-team] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-31 01:51:36.068 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [football-team] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-31 01:51:40.287 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate [football-team] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-31 01:51:40.568 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate [football-team] - Finished Spring Data repository scanning in 231 ms. Found 3 JPA repository interfaces.
+2025-12-31 01:51:44.550 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer [football-team] - Tomcat initialized with port 8080 (http)
+2025-12-31 01:51:44.622 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol [football-team] - Initializing ProtocolHandler ["http-nio-8080"]
+2025-12-31 01:51:44.636 [restartedMain] INFO  org.apache.catalina.core.StandardService [football-team] - Starting service [Tomcat]
+2025-12-31 01:51:44.638 [restartedMain] INFO  org.apache.catalina.core.StandardEngine [football-team] - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2025-12-31 01:51:44.878 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [football-team] - Initializing Spring embedded WebApplicationContext
+2025-12-31 01:51:44.884 [restartedMain] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [football-team] - Root WebApplicationContext: initialization completed in 8810 ms
+2025-12-31 01:51:45.630 [restartedMain] INFO  com.testtechnique.football.security.JwtService [football-team] - JwtService démarré, profils actifs = [dev]
+2025-12-31 01:51:45.631 [restartedMain] DEBUG com.testtechnique.football.security.JwtService [football-team] - Logging JWT en mode VERBOSE (dev/local)
+2025-12-31 01:51:45.632 [restartedMain] DEBUG com.testtechnique.football.security.JwtService [football-team] - Secret JWT (base64) = ZmFrZS1z...
+2025-12-31 01:51:46.108 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource [football-team] - HikariPool-1 - Starting...
+2025-12-31 01:51:46.820 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool [football-team] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6f233742
+2025-12-31 01:51:46.834 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource [football-team] - HikariPool-1 - Start completed.
+2025-12-31 01:51:47.361 [restartedMain] INFO  org.flywaydb.core.internal.license.VersionPrinter [football-team] - Flyway Community Edition 9.22.3 by Redgate
+2025-12-31 01:51:47.364 [restartedMain] INFO  org.flywaydb.core.internal.license.VersionPrinter [football-team] - See release notes here: https://rd.gt/416ObMi
+2025-12-31 01:51:47.368 [restartedMain] INFO  org.flywaydb.core.internal.license.VersionPrinter [football-team] - 
+2025-12-31 01:51:47.484 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor [football-team] - Database: jdbc:mysql://localhost:3306/football_dev (MySQL 8.0)
+2025-12-31 01:51:47.689 [restartedMain] INFO  org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory [football-team] - Repair of failed migration in Schema History table `football_dev`.`flyway_schema_history` not necessary. No failed migration detected.
+2025-12-31 01:51:47.768 [restartedMain] INFO  org.flywaydb.core.internal.command.DbRepair [football-team] - Successfully repaired schema history table `football_dev`.`flyway_schema_history` (execution time 00:00.202s).
+2025-12-31 01:51:47.869 [restartedMain] INFO  org.flywaydb.core.internal.command.DbValidate [football-team] - Successfully validated 4 migrations (execution time 00:00.035s)
+2025-12-31 01:51:47.932 [restartedMain] INFO  org.flywaydb.core.internal.command.DbMigrate [football-team] - Current version of schema `football_dev`: 4
+2025-12-31 01:51:47.937 [restartedMain] WARN  org.flywaydb.core.internal.command.DbMigrate [football-team] - Schema `football_dev` has a version (4) that is newer than the latest available migration (3) !
+2025-12-31 01:51:47.958 [restartedMain] INFO  org.flywaydb.core.internal.command.DbMigrate [football-team] - Schema `football_dev` is up to date. No migration necessary.
+2025-12-31 01:51:48.398 [restartedMain] INFO  org.hibernate.jpa.internal.util.LogHelper [football-team] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-31 01:51:48.652 [restartedMain] INFO  org.hibernate.Version [football-team] - HHH000412: Hibernate ORM core version 6.5.2.Final
+2025-12-31 01:51:48.824 [restartedMain] INFO  org.hibernate.cache.internal.RegionFactoryInitiator [football-team] - HHH000026: Second-level cache disabled
+2025-12-31 01:51:50.009 [restartedMain] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo [football-team] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-31 01:51:53.470 [restartedMain] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [football-team] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-31 01:51:53.652 [restartedMain] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [football-team] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-31 01:51:54.754 [restartedMain] DEBUG com.testtechnique.football.security.JwtAuthFilter [football-team] - Filter 'jwtAuthFilter' configured for use
+2025-12-31 01:51:55.623 [restartedMain] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer [football-team] - Global AuthenticationManager configured with UserDetailsService bean with name jpaUserDetailsService
+2025-12-31 01:51:56.510 [restartedMain] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [football-team] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-31 01:51:59.888 [restartedMain] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [football-team] - Exposing 4 endpoints beneath base path '/actuator'
+2025-12-31 01:52:02.395 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [football-team] - LiveReload server is running on port 35729
+2025-12-31 01:52:02.533 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol [football-team] - Starting ProtocolHandler ["http-nio-8080"]
+2025-12-31 01:52:02.595 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer [football-team] - Tomcat started on port 8080 (http) with context path '/'
+2025-12-31 01:52:02.638 [restartedMain] INFO  com.testtechnique.football.Application [football-team] - Started Application in 28.056 seconds (process running for 31.083)
+2025-12-31 02:01:21.445 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [football-team] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-31 02:01:21.465 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet [football-team] - Initializing Servlet 'dispatcherServlet'
+2025-12-31 02:01:21.615 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet [football-team] - Completed initialization in 150 ms
+2025-12-31 02:01:22.083 [http-nio-8080-exec-1] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 02:01:22.348 [http-nio-8080-exec-1] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767141891, exp=1767145491, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 02:01:23.928 [http-nio-8080-exec-1] WARN  org.springframework.data.web.config.SpringDataJacksonConfiguration$PageModule$PlainPageSerializationWarning [football-team] - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2025-12-31 02:01:24.450 [http-nio-8080-exec-2] INFO  com.testtechnique.football.auth.AuthController [football-team] - Tentative de connexion d'un utilisateur
+2025-12-31 02:01:24.818 [http-nio-8080-exec-2] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 02:01:24.852 [http-nio-8080-exec-2] DEBUG com.testtechnique.football.security.JwtService [football-team] - Token généré pour utilisateur=admin expiresAt=2025-12-31T03:01:24.809+0100 token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2NzE0Mjg4NCwiZXhwIjoxNzY3MTQ2NDg0LCJyb2xlcyI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl19.tAFjLM1enMbDXs3ZOiCL9a0ti1fOYCZeTU_Gt5wvISw
+2025-12-31 02:01:24.854 [http-nio-8080-exec-2] INFO  com.testtechnique.football.auth.AuthController [football-team] - Authentification réussie pour un utilisateur
+2025-12-31 02:03:27.969 [http-nio-8080-exec-3] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 02:03:28.000 [http-nio-8080-exec-3] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767142884, exp=1767146484, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 02:03:29.114 [http-nio-8080-exec-4] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 02:03:29.133 [http-nio-8080-exec-4] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767142884, exp=1767146484, roles=[ROLE_ADMIN, ROLE_USER]}
+2025-12-31 02:03:37.237 [http-nio-8080-exec-5] WARN  com.testtechnique.football.security.JwtService [football-team] - Le secret JWT fourni est trop court (28 bytes). Dérivation d'une clé 256-bit via SHA-256.
+2025-12-31 02:03:37.247 [http-nio-8080-exec-5] DEBUG com.testtechnique.football.security.JwtService [football-team] - Username extrait depuis le token : admin ; claims={sub=admin, iat=1767142884, exp=1767146484, roles=[ROLE_ADMIN, ROLE_USER]}

@@ -14,6 +14,12 @@ server:
 logging:
   # utiliser le fichier log4j2.xml présent dans le classpath (src/main/resources)
   config: classpath:log4j2.xml
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n"
+  level:
+    root: INFO
+    com.testtechnique.football: INFO
+    org.springframework: WARN
 
 app:
   jwt:
