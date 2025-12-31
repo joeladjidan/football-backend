@@ -13,8 +13,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * Contrôleur REST pour la gestion de l'authentification des utilisateurs.
- * Fournit un endpoint pour se connecter et obtenir un token JWT.
+ * REST controller that handles user authentication.
+ * Provides an endpoint to log in and obtain a JWT token.
  */
 @RestController
 @RequestMapping("/api/auth")
@@ -26,10 +26,10 @@ public class AuthController {
     private final JwtService jwtService;
 
     /**
-     * Constructeur pour injecter les dépendances nécessaires.
+     * Constructor to inject required dependencies.
      *
-     * @param authenticationConfiguration Configuration d'authentification permettant d'obtenir l'AuthenticationManager.
-     * @param jwtService Service pour la génération et la gestion des tokens JWT.
+     * @param authenticationConfiguration Authentication configuration used to obtain the AuthenticationManager.
+     * @param jwtService Service responsible for generating and handling JWT tokens.
      */
     public AuthController(AuthenticationConfiguration authenticationConfiguration, JwtService jwtService) {
         this.authenticationConfiguration = authenticationConfiguration;
@@ -37,11 +37,10 @@ public class AuthController {
     }
 
     /**
-     * Endpoint POST pour authentifier un utilisateur.
-     * Si les identifiants sont valides, retourne un token JWT.
+     * POST endpoint to authenticate a user. If credentials are valid, returns a JWT token.
      *
-     * @param request Objet contenant les identifiants de l'utilisateur (username et password).
-     * @return Réponse HTTP contenant un token JWT en cas de succès ou une erreur en cas d'échec.
+     * @param request Request object containing user credentials (username and password).
+     * @return HTTP response containing a JWT token on success or an error response on failure.
      */
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest request) {
@@ -72,24 +71,24 @@ public class AuthController {
     }
 
     /**
-     * Classe interne représentant une requête de connexion.
-     * Contient les champs nécessaires pour l'authentification.
+     * Internal class representing a login request.
+     * Contains the fields required for authentication.
      */
     public static class LoginRequest {
-        public String username; // Nom d'utilisateur.
-        public String password; // Mot de passe.
+        public String username; // Username
+        public String password; // Password
     }
 
     /**
-     * Classe interne représentant une réponse contenant un token JWT.
+     * Internal class representing a response that contains a JWT token.
      */
     public static class TokenResponse {
-        public String token; // Token JWT.
+        public String token; // JWT token
 
         /**
-         * Constructeur pour initialiser le token.
+         * Constructor to initialize the token.
          *
-         * @param t Token JWT.
+         * @param t JWT token
          */
         public TokenResponse(String t) {
             this.token = t;
@@ -97,15 +96,15 @@ public class AuthController {
     }
 
     /**
-     * Classe interne représentant une réponse d'erreur.
+     * Internal class representing an error response.
      */
     public static class ErrorResponse {
-        public String error; // Message d'erreur.
+        public String error; // Error message
 
         /**
-         * Constructeur pour initialiser le message d'erreur.
+         * Constructor to initialize the error message.
          *
-         * @param error Message d'erreur.
+         * @param error Error message
          */
         public ErrorResponse(String error) {
             this.error = error;

@@ -19,6 +19,7 @@
     <java.version>17</java.version>
     <flyway.version>9.22.3</flyway.version>
     <mysql.connector.version>8.4.0</mysql.connector.version>
+    <micrometer.version>1.11.8</micrometer.version>
   </properties>
 
   <!-- xml -->
@@ -114,6 +115,7 @@
       <groupId>io.micrometer</groupId>
       <artifactId>micrometer-registry-prometheus</artifactId>
     </dependency>
+    <!-- Note: logging registry is optional and created at runtime if available -->
 
     <!-- Testing -->
     <dependency>

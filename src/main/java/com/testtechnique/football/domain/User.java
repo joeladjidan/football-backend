@@ -1,14 +1,15 @@
-/**
- * Entité JPA représentant un utilisateur applicatif (username, password, roles).
- * <p>
- * @author Joël ADJIDAN
- * @since 2025-12-11
- */
-
 package com.testtechnique.football.domain;
 
 import jakarta.persistence.*;
 
+/**
+ * JPA entity representing an application user (username, password, roles).
+ *
+ * Maps to table `users`. Roles are stored as a CSV string (e.g. "ROLE_USER,ROLE_ADMIN").
+ *
+ * @author Joël ADJIDAN
+ * @since 2025-12-11
+ */
 @Entity
 @Table(name = "users")
 public class User {
@@ -23,7 +24,7 @@ public class User {
     private String password;
 
     /**
-     * Authorities stockées sous forme de chaîne CSV: ex. "ROLE_USER,ROLE_ADMIN"
+     * Authorities stored as CSV string, e.g. "ROLE_USER,ROLE_ADMIN".
      */
     @Column(nullable = false, length = 255)
     private String roles;

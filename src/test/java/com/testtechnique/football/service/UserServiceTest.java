@@ -30,7 +30,7 @@ public class UserServiceTest {
     private PasswordEncoder encoder;
 
     @InjectMocks
-    private UserService svc;
+    private IUserService svc;
 
     @Captor
     private ArgumentCaptor<User> userCaptor;

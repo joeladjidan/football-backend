@@ -7,6 +7,8 @@ import com.testtechnique.football.dto.UserRequest;
 import com.testtechnique.football.dto.UserResponse;
 import com.testtechnique.football.domain.User;
 import org.springframework.stereotype.Component;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class UserMapperImpl implements UserMapper {
@@ -15,7 +17,16 @@ public class UserMapperImpl implements UserMapper {
         User ua = new User();
         ua.setUsername(req.username);
         ua.setPassword(req.password);
-        ua.setRoles(req.roles == null ? "ROLE_USER" : req.roles);
+        // convert list of roles to CSV string for storage; fallback to ROLE_USER
+        if (req.roles == null) {
+            ua.setRoles("ROLE_USER");
+        } else if (req.roles instanceof List) {
+            List<String> rl = req.roles;
+            String joined = rl.stream().collect(Collectors.joining(","));
+            ua.setRoles(joined.isEmpty() ? "ROLE_USER" : joined);
+        } else {
+            ua.setRoles(String.valueOf(req.roles));
+        }
         return ua;
     }
 

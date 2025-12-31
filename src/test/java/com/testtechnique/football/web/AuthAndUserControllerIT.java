@@ -3,6 +3,7 @@ package com.testtechnique.football.web;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.testtechnique.football.dto.UserRequest;
 import com.testtechnique.football.domain.User;
+import java.util.List;
 import com.testtechnique.football.repository.UserAccountRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -65,7 +66,7 @@ public class AuthAndUserControllerIT {
         String token = om.readTree(resp).get("token").asText();
 
         // admin create user
-        UserRequest newUser = new UserRequest(); newUser.username = "bob"; newUser.password = "bobpwd"; newUser.roles = "ROLE_USER";
+        UserRequest newUser = new UserRequest(); newUser.username = "bob"; newUser.password = "bobpwd"; newUser.roles = List.of("ROLE_USER");
         String created = mvc.perform(post("/api/users").contentType(MediaType.APPLICATION_JSON).content(om.writeValueAsString(newUser)).header("Authorization", "Bearer "+token))
                 .andExpect(status().isCreated())
                 .andReturn().getResponse().getContentAsString();
