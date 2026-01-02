@@ -1,200 +1,177 @@
-# Projet Football - Backend — Guide d'installation
-```markdown
-# Projet Football - Backend — Guide d'installation
+# Guide d'installation (backend)
 
-## Table des matières
-- [Aperçu](#aperçu)
-- [Prérequis](#prérequis)
-- [Installation](#installation)
-- [Configuration (base de données)](#configuration-base-de-donn%C3%A9es)
-- [Lancer l'application](#lancer-lapplication)
-- [Démarrage front + back (scripts)](#démarrage-front--back-scripts)
-- [Metrics / Logging vers fichier (Micrometer)](#metrics--logging-vers-fichier-micrometer)
-- [Javadoc & OpenAPI](#javadoc--openapi)
-- [Informations en temps réel](#informations-en-temps-r%C3%A9el)
-- [Tests](#tests)
-- [Dépannage courant](#d%C3%A9pannage-courant)
-- [Contribution](#contribution)
-- [Licence](#licence)
+Table des matières
+-----------------
 
----
+1. Aperçu
+2. Prérequis
+3. Récupérer le projet (git)
+4. Configuration des bases de données
+   - Base de développement (MySQL)
+   - Base de test (H2)
+   - Exécution via Docker (optionnel)
+5. Démarrer l'application localement
+   - Via Maven / Jar
+   - Via le script `start-all.sh` / `start-all.ps1`
+6. Exécuter les tests
+7. Profils et logs
+8. Dépannage rapide
+9. Contribuer
 
-## Aperçu
-Backend Java Spring Boot (Maven, Spring Data JPA, Flyway). Ce document explique comment configurer et lancer le backend localement.
+1. Aperçu
+---------
+Ce guide explique comment préparer un poste de développement pour le backend, configurer la base de données, et démarrer l'application localement (et en stack avec le frontend via le script `start-all.sh`).
 
-Branche courante du dépôt : `develop`
-IDE recommandé : IntelliJ IDEA
+2. Prérequis
+------------
+- Java 17 installé et accessible dans le PATH (ex: `java -version` doit renvoyer 17).
+- Maven (>= 3.6) installé (`mvn -v`).
+- Node / npm (pour le frontend) si vous souhaitez lancer l'interface.
+- MySQL (serveur) pour le développement local.
+- Docker (optionnel, requis pour exécuter Testcontainers ou des services en conteneur).
 
-## Prérequis
-- Java JDK 17+ (variable `JAVA_HOME` configurée pour les shells Windows) ou Java installé dans WSL si vous lancez les scripts depuis WSL
-- Maven 3.6+
-- Git
-- (Optionnel) Docker
+Remarques:
+- La base de développement est MySQL. Les tests unitaires/intégration utilisent H2 par défaut (configurable).
+- Si vous utilisez Testcontainers pour les tests d'intégration, Docker doit être opérationnel.
 
-Vérifier les versions :
-```bash
-java -version
-mvn -v
-git --version
+3. Récupérer le projet (git)
+---------------------------
+Sur votre machine, clonez le dépôt et positionnez-vous sur la branche désirée :
+
 ```
-
-## Installation
-1. Cloner le dépôt :
-```bash
+# cloner
 git clone https://github.com/joeladjidan/football-backend.git
-cd football-team/backend
-```
-2. Compiler :
-```bash
-mvn clean package
-```
-3. (Optionnel) construire sans tests :
-```bash
-mvn -DskipTests package
-```
+git clone https://github.com/joeladjidan/football-frontend.git
+cd football-team
+# récupérer la branche recommandée
+git checkout develop
 
-## Configuration (base de données)
-- Base utilisée en développement/production : MySQL
-- Base utilisée pour les tests : H2 (mémoire)
+4. Configuration des bases de données
+-------------------------------------
+4.1 Base de développement (MySQL)
 
-L'application lit `src/main/resources/application.yml` (et les profiles `application-dev.yml`, `application-prod.yml`).
+Créez une base MySQL (ex: `football_team_dev`) et un utilisateur avec les droits nécessaires.
+Exemple de paramètres à renseigner (dans `src/main/resources/application-dev.yml` ou via variables d'environnement) :
 
-Exemple MySQL (dev / prod) — paramètres de connexion :
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/football?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
-spring.datasource.driverClassName=com.mysql.cj.jdbc.Driver
-spring.datasource.username=root
-spring.datasource.password=root
-spring.jpa.hibernate.ddl-auto=validate
-spring.flyway.enabled=true
 ```
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/football_team_dev?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: football
+    password: secret
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
-Exemple H2 pour tests rapides :
-```properties
-spring.datasource.url=jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false
-spring.datasource.driverClassName=org.h2.Driver
-spring.datasource.username=sa
-spring.datasource.password=
-spring.jpa.hibernate.ddl-auto=create-drop
-spring.flyway.enabled=false
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
 ```
 
-Lancer MySQL via Docker (optionnel) :
-```bash
-docker run -d --name mysql-football \
-  -e MYSQL_ROOT_PASSWORD=root \
-  -e MYSQL_DATABASE=football \
-  -e MYSQL_USER=root \
-  -e MYSQL_PASSWORD=root \
-  -p 3306:3306 \
-  mysql:8 --default-authentication-plugin=mysql_native_password
+4.2 Base de test (H2)
+
+Les tests unitaires et d'intégration en mode `@DataJpaTest` ou `@SpringBootTest` utilisent H2 in-memory par défaut. Exemple de configuration de test `application-test.yml` (déjà présent dans le repo) :
+
+```
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
 ```
 
-## Lancer l'application
-- En dev (profil `dev`) via Maven (remarquer que l'option `-D` doit être placée avant le goal) :
-```bash
-mvn -Dspring-boot.run.profiles=dev spring-boot:run
+4.3 Exécution via Docker (optionnel)
+
+Vous pouvez lancer MySQL via Docker :
+
 ```
-- Avec le jar (profil actif via `-Dspring.profiles.active`) :
-```bash
-java -Dspring.profiles.active=dev -jar target/<artifact>.jar
+docker run --name ft-mysql -e MYSQL_ROOT_PASSWORD=secret -e MYSQL_DATABASE=football_team_dev -e MYSQL_USER=football -e MYSQL_PASSWORD=secret -p 3306:3306 -d mysql:8
 ```
 
-L'API sera disponible par défaut sur `http://localhost:8080` (selon configuration).
+Ensuite adaptez `application-dev.yml` pour pointer sur `localhost:3306` ou sur le host Docker approprié.
 
-## Démarrage front + back (scripts)
-Des scripts d'aide sont fournis à la racine du projet dans `scripts/` :
+5. Démarrer l'application localement
+-----------------------------------
+5.1 Via Maven (profile dev)
 
-- `scripts/start-all.sh` (Bash/WSL) — démarre le backend et le frontend en transmettant le profile et le port frontend. Paramètres utiles :
-  - `PROFILE` : profil Spring à utiliser (ex: `dev`)
-  - `FRONTEND_PORT` : port pour `ng serve` (ex: `4200`)
-
-- `scripts/start-all.ps1` (PowerShell) — variante Windows PowerShell avec options `-Profile` et `-FrontendPort`.
-
-Exemples :
-```bash
-# Bash / WSL
-cd <repo-root>
-PROFILE=dev FRONTEND_PORT=4300 ./scripts/start-all.sh
-
-# PowerShell
-.
-\scripts\start-all.ps1 -Profile dev -FrontendPort 4300
+```
+# depuis le dossier backend
+mvn -Dspring.profiles.active=dev spring-boot:run
 ```
 
-Ces scripts :
-- transmettent correctement `-Dspring-boot.run.profiles=...` à Maven
-- transmettent `--port` au démarrage Angular (`npm start -- --port <port>`)
-- effectuent une tentative « best-effort » pour libérer le port frontend avant de démarrer (peut nécessiter des droits administrateur)
+ou construire puis exécuter le jar :
 
-Remarques d'environnement : si vous lancez `start-all.sh` dans WSL, assurez-vous que Java et Maven sont installés dans WSL. Si vous utilisez PowerShell, assurez-vous que `JAVA_HOME` est défini pour PowerShell.
-
-## Metrics / Logging vers fichier (Micrometer)
-Le projet contient la dépendance `micrometer-registry-logging`. Pour activer l'export des métriques vers les logs (LoggingMeterRegistry), ajoutez dans `application-*.yml` :
-```yaml
-management:
-  metrics:
-    export:
-      logging:
-        enabled: true
-        # intervalle d'export (ex: 1 minute)
-        step: PT1M
+```
+mvn clean package -DskipTests
+java -jar target/*.jar --spring.profiles.active=dev
 ```
 
-La configuration par défaut exportera les métriques périodiquement dans les logs. Vous pouvez ajuster `step` et `pattern` si nécessaire.
+5.2 Via le script `start-all.sh` / `start-all.ps1`
 
-## Javadoc & OpenAPI
-- Générer la Javadoc Maven :
-```bash
-mvn javadoc:javadoc
+Le dépôt contient des scripts pour lancer backend + frontend sur votre machine pour du développement local :
+
+- Sous Linux/macOS :
+  - Rendre exécutable : `chmod +x scripts/start-all.sh`
+  - Lancer : `./scripts/start-all.sh`
+
+- Sous Windows PowerShell :
+  - Lancer : `.	emplates
+eplace
+ot-sure	hisile` (ou `scripts/start-all.ps1` si présent) ; exemple :
+  - `.	ools
+un
+un-start-all.ps1` (ou `scripts/start-all.ps1` si fourni).
+
+Note: dans ce dépôt il existe `scripts/start-all.ps1` et `scripts/start-all.sh` — utilisez le script adapté à votre OS.
+
+6. Exécuter les tests
+---------------------
+Unitaires :
 ```
-Les pages Javadoc sont générées dans `backend/target/site/apidocs`.
-
-- OpenAPI / Swagger UI : si `springdoc-openapi` est activé, l'UI est généralement disponible sur :
-  - `http://localhost:8080/swagger-ui/index.html` ou `http://localhost:8080/swagger-ui.html`
-
-Note importante sur les DTOs : le DTO `UserRequest` accepte désormais `roles` comme tableau JSON (`List<String>`). Le backend persiste les rôles en base comme une chaîne CSV pour compatibilité, mais l'API attend/retourne un tableau côté JSON.
-
-## Informations en temps réel
-- Actuator (si activé dans `application.yml` / `application.properties`)
-  - Endpoints courants :
-    - `/actuator/health`
-    - `/actuator/info`
-    - `/actuator/metrics`
-  - Exemple (PowerShell) :
-```powershell
-Invoke-RestMethod -Uri http://localhost:8080/actuator/health
-```
-
-- Logs en temps réel (PowerShell) :
-```powershell
-Get-Content -Path target\\logs\\app.log -Wait
-```
-
-- Vérifier processus et port (PowerShell)
-```powershell
-Get-Process -Name java
-netstat -ano | findstr :8080
-```
-
-- H2 Console (si activée)
-  - URL : `http://localhost:8080/h2-console`
-
-## Tests
-- Exécuter tous les tests :
-```bash
+# backend
 mvn test
 ```
 
-## Dépannage courant
-- Erreur : "The JAVA_HOME environment variable is not defined correctly" — vérifier `JAVA_HOME` et que `java` est accessible depuis le shell utilisé (PowerShell vs WSL).
-- Erreur : "Port 4200 is already in use" — soit changer `FRONTEND_PORT`, soit libérer le port (les scripts tentent un kill best-effort). Sous Windows, utilisez `Get-Process`/`Stop-Process` ou `netstat` pour identifier et arrêter le processus.
-- Erreur JSON / roles : si vous envoyez `roles` depuis le frontend, envoyez un tableau JSON (ex: `["ROLE_USER"]`) — le backend accepte désormais `List<String>`.
+Tests d'intégration :
+- Si vos tests utilisent Testcontainers, assurez-vous que Docker est démarré.
+- Si vous préférez exécuter les tests avec une base MySQL locale (pour reproduire la prod), exportez les variables d'environnement `SPRING_DATASOURCE_URL`, `SPRING_DATASOURCE_USERNAME`, `SPRING_DATASOURCE_PASSWORD` avant d'exécuter `mvn verify`.
 
-## Contribution
-- Fork & PR : respectez la convention de commit et ajoutez des tests pour les nouvelles fonctionnalités.
-
-## Licence
-Ajouter le fichier `LICENSE` à la racine (ex: MIT ou Apache-2.0).
+7. Profils et logs
+------------------
+- Profiles disponibles : `dev`, `prod`, `test`.
+- Les fichiers de configuration se trouvent dans `src/main/resources/` (`application.yml`, `application-dev.yml`, `application-prod.yml`, `application-test.yml`).
+- Pour activer le logging debug en dev, utilisez :
 
 ```
+# exécuter avec niveau DEBUG
+mvn -Dspring-boot.run.profiles=dev -Dlogging.level.root=DEBUG spring-boot:run
+```
+
+8. Dépannage rapide
+-------------------
+- Erreur: "Failed to configure a DataSource: 'url' attribute is not specified" → activez le profil `dev` et/ou vérifiez `application-dev.yml` et les variables d'environnement.
+- Tests qui utilisent Testcontainers mais Docker non disponible → installez et démarrez Docker ou configurez vos tests pour utiliser H2/local MySQL.
+- Problème de migration Flyway / syntaxe SQL avec H2 → Veillez à ce que les scripts Flyway soient compatibles H2 (ou exécutez les migrations uniquement sur MySQL). Si un script contient des commandes non compatibles H2 (ex: `MODIFY COLUMN`), créez une version compatible H2 sous `src/main/resources/db/migration` conditionnelle au moteur ou adaptez la configuration de test pour utiliser MySQL.
+
+9. Contribuer
+-------------
+- Suivez la convention de branche `feature/<ticket>` ou `bugfix/<ticket>`.
+- Faites des Pull Requests claires avec description, étapes de reproduction et capture d'écran si besoin.
+
+Annexes — Variables d'environnement utiles
+-----------------------------------------
+- SPRING_PROFILES_ACTIVE=dev
+- SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3306/football_team_dev
+- SPRING_DATASOURCE_USERNAME=football
+- SPRING_DATASOURCE_PASSWORD=secret
+- DOCKER_HOST (si Docker distant)
+
+---
+
+Fin du guide.
+
