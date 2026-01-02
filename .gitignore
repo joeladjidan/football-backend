@@ -1,0 +1,44 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+/.idea/
+*.iml
+/.vscode/
+
+# Logs
+logs/
+*.log
+
+# Java / Maven
+# Ignore build output (relative to backend/)
+target/
+
+# Maven wrapper and metadata
+.mvn/
+mvnw
+mvnw.cmd
+
+# Build artifacts / temp
+build/
+out/
+
+# Environment / secrets
+.env
+.env.local
+secrets.properties
+credentials.yml.enc
+*.jks
+*.keystore
+*.p12
+
+# Docker / CI overrides
+docker-compose.override.yml
+.docker/
+
+# Editors and temp files
+*.swp
+*~
+
+# End of file
